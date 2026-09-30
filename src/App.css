@@ -1,0 +1,1339 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, "Noto Sans KR", sans-serif;
+  background: #f8f7f3;
+  color: #222;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* =========================
+   공통
+========================= */
+
+.app {
+  min-height: 100vh;
+}
+
+header {
+  height: 88px;
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border-bottom: 1px solid #e8e5de;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+nav button {
+  border: none;
+  background: transparent;
+  color: #666;
+  font-size: 15px;
+  padding: 8px 0;
+}
+
+nav button:hover {
+  color: #111;
+}
+
+/* =========================
+   메인
+========================= */
+
+.page {
+  width: min(1100px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 70px 0 100px;
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 20px 100px;
+}
+
+.hero h1 {
+  margin: 0 0 20px;
+  font-size: 52px;
+  line-height: 1.2;
+  letter-spacing: -3px;
+}
+
+.hero p {
+  margin: 0 auto 36px;
+  color: #666;
+  font-size: 18px;
+}
+
+.primaryButton {
+  border: none;
+  border-radius: 12px;
+  padding: 15px 28px;
+  background: #222;
+  color: white;
+  font-weight: 700;
+}
+
+.primaryButton:hover {
+  background: #444;
+}
+
+/* =========================
+   STEP
+========================= */
+
+.step {
+  text-align: center;
+  color: #8a694c;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
+}
+
+.pageTitle {
+  text-align: center;
+  margin: 0;
+  font-size: 42px;
+  letter-spacing: -2px;
+}
+
+.pageDescription {
+  text-align: center;
+  color: #777;
+  margin: 18px 0 45px;
+  font-size: 17px;
+}
+
+/* =========================
+   뒤로가기
+========================= */
+
+.backButton {
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 8px;
+  padding: 10px 17px;
+  color: #444;
+}
+
+.backButton:hover {
+  background: #f1f1f1;
+}
+
+/* =========================
+   목적 선택
+========================= */
+
+.purposeGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.purposeCard {
+  min-height: 180px;
+  border: 1px solid #dedbd3;
+  border-radius: 18px;
+  background: white;
+  padding: 28px 20px;
+  text-align: center;
+  transition: 0.2s;
+}
+
+.purposeCard:hover {
+  transform: translateY(-3px);
+  border-color: #222;
+}
+
+.purposeCard.selected {
+  border: 2px solid #222;
+  background: #f1eee7;
+}
+
+.purposeCard h3 {
+  margin: 15px 0 8px;
+  font-size: 21px;
+}
+
+.purposeCard p {
+  margin: 0;
+  color: #777;
+  font-size: 14px;
+}
+
+/* =========================
+   조건 선택
+========================= */
+
+.conditionSection {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.conditionGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 35px 0;
+}
+
+.conditionCard {
+  border: 1px solid #ddd9d0;
+  border-radius: 16px;
+  background: white;
+  padding: 25px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.conditionCard:hover {
+  border-color: #888;
+}
+
+.conditionCard.selected {
+  border: 2px solid #222;
+  background: #f0ede6;
+}
+
+.conditionCard input {
+  display: none;
+}
+
+.conditionCard strong {
+  display: block;
+  font-size: 17px;
+  margin-bottom: 7px;
+}
+
+.conditionCard span {
+  color: #777;
+  font-size: 13px;
+}
+
+/* 기존 코드에서 조건 버튼을 button으로 만든 경우 */
+
+.conditionButtons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 30px 0;
+}
+
+.conditionButtons button {
+  border: 1px solid #d5d2ca;
+  background: white;
+  border-radius: 12px;
+  padding: 13px 20px;
+}
+
+.conditionButtons button:hover,
+.conditionButtons button.selected {
+  background: #222;
+  color: white;
+  border-color: #222;
+}
+
+/* =========================
+   추천 버튼
+========================= */
+
+.recommendButton {
+  display: block;
+  margin: 35px auto 0;
+  border: none;
+  border-radius: 12px;
+  background: #222;
+  color: white;
+  padding: 16px 28px;
+  font-weight: 700;
+}
+
+.recommendButton:hover {
+  background: #444;
+}
+
+/* =========================
+   카페 카드
+========================= */
+
+.cafeGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.cafeCard {
+  background: white;
+  border: 1px solid #e1ded7;
+  border-radius: 18px;
+  padding: 25px;
+  transition: 0.2s;
+}
+
+.cafeCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.cafeCard h3 {
+  margin: 0 0 10px;
+  font-size: 22px;
+}
+
+.cafeCard p {
+  color: #777;
+  margin: 7px 0;
+}
+
+.cafeTags {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin: 18px 0;
+}
+
+.cafeTag {
+  padding: 6px 10px;
+  background: #f0eee8;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.cafeCard button {
+  border: 1px solid #222;
+  background: white;
+  border-radius: 9px;
+  padding: 9px 14px;
+}
+
+.cafeCard button:hover {
+  background: #222;
+  color: white;
+}
+
+/* =========================
+   상세 페이지
+========================= */
+
+.detailCard {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 20px;
+  padding: 35px;
+  border: 1px solid #e2dfd8;
+}
+
+.detailCard h2 {
+  margin-top: 0;
+  font-size: 30px;
+}
+
+.detailInfo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 25px 0;
+}
+
+.infoBox {
+  padding: 18px;
+  border-radius: 12px;
+  background: #f5f3ee;
+}
+
+.infoBox strong {
+  display: block;
+  margin-bottom: 7px;
+}
+
+.infoBox span {
+  color: #666;
+}
+
+/* =========================
+   혼잡도
+========================= */
+
+.congestion {
+  display: inline-block;
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: #eee9df;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* =========================
+   비교
+========================= */
+
+.compareGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.compareCard {
+  background: white;
+  border: 1px solid #ddd9d0;
+  border-radius: 18px;
+  padding: 25px;
+}
+
+.compareTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.compareTable th,
+.compareTable td {
+  border-bottom: 1px solid #eee;
+  padding: 15px;
+  text-align: center;
+}
+
+.compareTable th {
+  background: #f4f2ed;
+}
+
+/* =========================
+   로그인 / 회원가입
+========================= */
+
+.authBox {
+  width: min(420px, 100%);
+  margin: 50px auto;
+  background: white;
+  border: 1px solid #e0ddd6;
+  border-radius: 18px;
+  padding: 35px;
+}
+
+.authBox h2 {
+  margin-top: 0;
+  text-align: center;
+  font-size: 28px;
+}
+
+.authBox input {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 9px;
+  padding: 13px;
+  margin-bottom: 12px;
+  outline: none;
+}
+
+.authBox input:focus {
+  border-color: #222;
+}
+
+.authBox button {
+  width: 100%;
+  border: none;
+  border-radius: 9px;
+  background: #222;
+  color: white;
+  padding: 14px;
+  margin-top: 8px;
+}
+
+/* =========================
+   즐겨찾기
+========================= */
+
+.favoriteList {
+  display: grid;
+  gap: 15px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.favoriteItem {
+  background: white;
+  border: 1px solid #ddd9d0;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+/* =========================
+   제보
+========================= */
+
+.reportBox {
+  max-width: 650px;
+  margin: 0 auto;
+  background: white;
+  border: 1px solid #ddd9d0;
+  border-radius: 18px;
+  padding: 30px;
+}
+
+.reportGroup {
+  margin-bottom: 25px;
+}
+
+.reportGroup h3 {
+  margin-bottom: 12px;
+}
+
+.reportOptions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.reportOptions button {
+  border: 1px solid #d7d4cc;
+  background: white;
+  border-radius: 10px;
+  padding: 10px 16px;
+}
+
+.reportOptions button.selected {
+  background: #222;
+  color: white;
+  border-color: #222;
+}
+
+/* =========================
+   관리자
+========================= */
+
+.adminMenuGrid {
+  max-width: 900px;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.adminMenuCard {
+  border: 1px solid #ddd9d0;
+  background: white;
+  border-radius: 18px;
+  padding: 30px;
+  text-align: left;
+  transition: 0.2s;
+}
+
+.adminMenuCard:hover {
+  transform: translateY(-3px);
+  border-color: #222;
+}
+
+.adminMenuCard h3 {
+  margin: 0 0 10px;
+}
+
+.adminMenuCard p {
+  margin: 0;
+  color: #777;
+}
+
+/* 관리자 리스트 */
+
+.adminList {
+  max-width: 900px;
+  margin: 30px auto;
+  display: grid;
+  gap: 15px;
+}
+
+.adminListCard,
+.adminReportCard,
+.historyCard {
+  background: white;
+  border: 1px solid #ddd9d0;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.adminListCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.adminListCard button {
+  border: 1px solid #ccc;
+  background: white;
+  border-radius: 8px;
+  padding: 8px 14px;
+}
+
+.adminReportCard h3,
+.historyCard h3 {
+  margin-top: 0;
+}
+
+.statusBadge {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 20px;
+  background: #eee;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.statusButtons {
+  display: flex;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.statusButtons button {
+  border: 1px solid #ccc;
+  background: white;
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+.historyList {
+  max-width: 900px;
+  margin: 30px auto;
+  display: grid;
+  gap: 12px;
+}
+
+/* =========================
+   모바일
+========================= */
+
+@media (max-width: 700px) {
+  header {
+    height: auto;
+    min-height: 75px;
+    padding: 18px 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .page {
+    width: calc(100% - 30px);
+    padding-top: 45px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .pageTitle {
+    font-size: 32px;
+  }
+
+  .purposeGrid,
+  .conditionGrid,
+  .cafeGrid,
+  .compareGrid,
+  .adminMenuGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .detailInfo {
+    grid-template-columns: 1fr;
+  }
+
+  .adminListCard {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+/* =========================
+   현재 JSX 맞춤 수정
+========================= */
+
+/* 헤더 */
+.header {
+  height: 88px;
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border-bottom: 1px solid #e8e5de;
+}
+
+.logo {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  cursor: pointer;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
+.logo span {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+/* 영어 작은 제목 */
+.eyebrow {
+  margin: 0 0 14px;
+  color: #927354;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+}
+
+/* =========================
+   HOME
+========================= */
+
+.home {
+  min-height: calc(100vh - 88px);
+}
+
+.hero {
+  text-align: center;
+  padding: 90px 20px 75px;
+}
+
+.hero h1 {
+  margin: 0;
+  color: #222;
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -3px;
+}
+
+.heroText {
+  margin: 25px 0 35px;
+  color: #777;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.locationBox {
+  width: 430px;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 8px 7px 15px;
+  background: white;
+  border: 1px solid #ddd9d0;
+  border-radius: 12px;
+}
+
+.locationBox span {
+  font-size: 17px;
+}
+
+.locationBox input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+}
+
+.locationBox input::placeholder {
+  color: #aaa;
+}
+
+.locationBox button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  background: #222;
+  color: white;
+  font-size: 13px;
+}
+
+/* 방문 목적 */
+.purposeSection {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 50px 20px 100px;
+}
+
+.sectionTitle {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.sectionTitle h2 {
+  margin: 0 0 10px;
+  font-size: 28px;
+  line-height: 1.4;
+  letter-spacing: -1.5px;
+}
+
+.sectionTitle p {
+  margin: 0;
+  color: #777;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.purposeGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.purposeCard {
+  min-height: 185px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  border: 1px solid #dedbd3;
+  border-radius: 18px;
+  background: white;
+  padding: 25px 18px;
+
+  color: #222;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.purposeCard:hover {
+  transform: translateY(-4px);
+  border-color: #222;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.purposeIcon {
+  font-size: 32px;
+  line-height: 1;
+}
+
+.purposeCard strong {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.purposeCard > span:last-child {
+  color: #777;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* =========================
+   조건 선택 화면
+========================= */
+
+.conditionPage {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 75px 20px 100px;
+  text-align: center;
+}
+
+.conditionPage .eyebrow {
+  margin-bottom: 16px;
+}
+
+.conditionPage h1 {
+  margin: 0;
+  padding: 0;
+
+  color: #222;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -2.5px;
+}
+
+.conditionPage h1 br {
+  display: block;
+}
+
+.conditionPage .pageDescription {
+  margin: 22px 0 38px;
+  color: #777;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.conditionGrid {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 auto 30px;
+  flex-wrap: wrap;
+}
+
+.conditionCard {
+  min-width: 145px;
+  min-height: 75px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  border: 1px solid #d9d5cd;
+  border-radius: 12px;
+  background: white;
+
+  color: #333;
+  padding: 14px 20px;
+
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.conditionCard:hover {
+  border-color: #222;
+  transform: translateY(-2px);
+}
+
+.conditionCard.selected {
+  border: 2px solid #222;
+  background: #f1eee7;
+}
+
+.conditionCard > span {
+  font-size: 15px;
+  line-height: 1;
+}
+
+.conditionCard strong {
+  display: inline;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* 조건 추천 버튼 */
+.conditionPage .primaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 5px;
+  padding: 14px 24px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #222;
+  color: white;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.conditionPage .primaryButton:hover {
+  background: #444;
+}
+
+/* 뒤로가기 위치 */
+.page > .backButton {
+  margin-top: 5px;
+}
+
+/* =========================
+   추천 화면
+========================= */
+
+.recommendHeader {
+  text-align: center;
+  margin: 60px 0 40px;
+}
+
+.recommendHeader h1 {
+  margin: 0;
+  font-size: 42px;
+  line-height: 1.35;
+  letter-spacing: -2px;
+}
+
+.selectedCondition {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 22px;
+}
+
+.selectedCondition span {
+  color: #888;
+  font-size: 13px;
+}
+
+.selectedCondition b {
+  padding: 6px 11px;
+  border-radius: 20px;
+  background: #eeeae2;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* =========================
+   카페 목록
+========================= */
+
+.cafeList {
+  max-width: 850px;
+  margin: 0 auto;
+  display: grid;
+  gap: 15px;
+}
+
+.cafeCard {
+  display: flex;
+  gap: 18px;
+  background: white;
+  border: 1px solid #e2ded6;
+  border-radius: 17px;
+  padding: 22px;
+}
+
+.cafeRank {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #222;
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.cafeMain {
+  flex: 1;
+}
+
+.cafeTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.cafeTop h3 {
+  margin: 0 0 5px;
+  font-size: 20px;
+}
+
+.cafeTop p {
+  margin: 0;
+  color: #888;
+  font-size: 13px;
+}
+
+.heartButton {
+  border: none;
+  background: transparent;
+  color: #555;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.heartButton.large {
+  font-size: 30px;
+}
+
+.cafeTags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin: 14px 0;
+}
+
+.cafeTags span {
+  padding: 5px 9px;
+  border-radius: 15px;
+  background: #f1efe9;
+  color: #666;
+  font-size: 11px;
+}
+
+.recommendReason {
+  margin: 10px 0;
+  color: #666;
+  font-size: 13px;
+}
+
+.cafeActions {
+  display: flex;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.cafeActions button {
+  border: 1px solid #d6d2ca;
+  border-radius: 8px;
+  background: white;
+  padding: 8px 12px;
+  font-size: 12px;
+}
+
+.cafeActions button.active {
+  background: #222;
+  color: white;
+  border-color: #222;
+}
+
+.floatingCompare {
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: none;
+  border-radius: 30px;
+  padding: 14px 22px;
+  background: #222;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+}
+
+/* =========================
+   공통 페이지 제목
+========================= */
+
+.page > .sectionTitle {
+  margin: 65px 0 40px;
+}
+
+.sectionTitle h1 {
+  margin: 0;
+  font-size: 42px;
+  line-height: 1.35;
+  letter-spacing: -2px;
+}
+
+.sectionTitle > p:not(.eyebrow) {
+  margin-top: 15px;
+}
+
+/* =========================
+   상세
+========================= */
+
+.detail {
+  max-width: 800px;
+  margin: 65px auto 0;
+}
+
+.detailHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.detailHeader h1 {
+  margin: 0 0 10px;
+  font-size: 40px;
+  letter-spacing: -2px;
+}
+
+.detailHeader p:last-child {
+  color: #777;
+}
+
+.congestionBox {
+  margin: 35px 0 18px;
+  padding: 25px;
+  border-radius: 16px;
+  background: #f0ede6;
+}
+
+.congestionBox p {
+  margin: 0 0 8px;
+  color: #777;
+  font-size: 13px;
+}
+
+.congestionBox strong {
+  display: block;
+  font-size: 28px;
+  margin-bottom: 7px;
+}
+
+.congestionBox span {
+  color: #777;
+  font-size: 12px;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.infoGrid > div {
+  padding: 18px;
+  border: 1px solid #e4e0d8;
+  border-radius: 12px;
+  background: white;
+}
+
+.infoGrid span {
+  display: block;
+  margin-bottom: 7px;
+  color: #888;
+  font-size: 12px;
+}
+
+.infoGrid strong {
+  font-size: 16px;
+}
+
+.detailButtons {
+  display: flex;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.secondaryButton {
+  border: 1px solid #222;
+  border-radius: 10px;
+  background: white;
+  color: #222;
+  padding: 13px 20px;
+  font-weight: 600;
+}
+
+.textButton {
+  border: none;
+  background: transparent;
+  color: #666;
+  padding: 12px;
+}
+
+/* =========================
+   관리자 상태 카드
+========================= */
+
+.adminStatusCard {
+  max-width: 900px;
+  margin: 15px auto;
+  padding: 22px;
+  border: 1px solid #ddd9d0;
+  border-radius: 15px;
+  background: white;
+}
+
+.emptyBox {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 40px;
+  text-align: center;
+  border: 1px solid #ddd9d0;
+  border-radius: 16px;
+  background: white;
+}
+
+/* =========================
+   모바일
+========================= */
+
+@media (max-width: 700px) {
+  .header {
+    height: auto;
+    padding: 18px 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .logo {
+    font-size: 26px;
+  }
+
+  .logo span {
+    font-size: 20px;
+  }
+
+  .hero {
+    padding: 60px 15px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .purposeGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .conditionPage {
+    padding-top: 55px;
+  }
+
+  .conditionPage h1 {
+    font-size: 32px;
+    line-height: 1.4;
+  }
+
+  .conditionGrid {
+    gap: 8px;
+  }
+
+  .conditionCard {
+    min-width: 130px;
+  }
+
+  .recommendHeader h1,
+  .sectionTitle h1 {
+    font-size: 32px;
+  }
+
+  .cafeCard {
+    padding: 18px;
+  }
+
+  .infoGrid {
+    grid-template-columns: 1fr;
+  }
+}
