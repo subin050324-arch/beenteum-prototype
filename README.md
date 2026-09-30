@@ -42,3 +42,4 @@ npm run dev
 
 [프로토타입 시연 영상 보기]
 https://drive.google.com/file/d/1Evv0YSd5QLEdgiZH33LEaovbfw20yF0O/view?usp=sharing
+▶ 프로토타입 시연 영상 보기
