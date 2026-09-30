@@ -37,3 +37,7 @@
 ```bash
 npm install
 npm run dev
+
+## 시연 영상
+
+[프로토타입 시연 영상 보기](https://drive.google.com/file/d/1Evv0YSd5QLEdgiZH33LEaovbfw20yF0O/view?usp=sharing)
