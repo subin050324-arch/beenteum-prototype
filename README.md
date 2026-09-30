@@ -1,16 +1,39 @@
-# React + Vite
+# 빈틈 (BEENTEUM)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+목적에 맞는 카페를 탐색하고 혼잡도와 공간 정보를 확인할 수 있는 카페 탐색 서비스입니다.
 
-Currently, two official plugins are available:
+## 프로젝트 소개
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+빈틈은 카페 방문 전에 사용자의 방문 목적과 조건에 맞는 카페를 탐색하고,
+카페의 공간 정보와 혼잡도 정보를 확인할 수 있도록 돕는 서비스입니다.
 
-## React Compiler
+## 주요 기능
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 위치 및 지역 설정
+- 주변 카페 탐색
+- 방문 목적 선택
+  - 공부
+  - 업무
+  - 대화
+  - 휴식
+- 목적 및 조건 기반 카페 추천
+- 카페 상세 정보 확인
+- 혼잡도 확인
+- 카페 비교
+- 즐겨찾기
+- QR 기반 현장 혼잡도 제보
+- 관리자 카페/공간 정보 관리
+- 관리자 사용자 제보 관리
 
-## Expanding the ESLint configuration
+## 기술 스택
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- Vite
+- JavaScript
+- CSS
+
+## 실행 방법
+
+```bash
+npm install
+npm run dev
