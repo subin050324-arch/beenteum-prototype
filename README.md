@@ -25,13 +25,15 @@
 ```bash
 npm install
 npm run dev
+```
 
-시연 영상
+## 시연 영상
 
-▶ 프로토타입 시연 영상 보기
+[▶ 프로토타입 시연 영상 보기](https://drive.google.com/file/d/1Evv0YSd5QLEdgiZH33LEaovbfw20yF0O/view?usp=sharing)
 
-기술 스택
-React
-Vite
-JavaScript
-CSS
+## 기술 스택
+
+- React
+- Vite
+- JavaScript
+- CSS
